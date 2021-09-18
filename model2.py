@@ -215,7 +215,7 @@ outputs = Dense(3, activation="softmax")(x)
 model = Model(inputs=inputs, outputs=outputs)
 
 # NLP Model Activation
-path = './model'
+path = './model2'
 ckpt_1 = 'tf_chkpoint.ckpt'
 model.compile(optimizer="adam", loss="categorical_crossentropy", metrics=["accuracy"])
 mc = ModelCheckpoint(filepath = os.path.join(path, ckpt_1), monitor = 'val_accuracy', save_best_only = True, mode = 'max', verbose = 1, save_weights_only=True)

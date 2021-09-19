@@ -35,6 +35,10 @@ for sentence,i in zip(train['data'],tqdm(range(len(train['data'])))) :
     temp_X = [word for word in temp_X if not word in stopwords]
     X_train.append(temp_X)
 
+with open('x_train.csv','w') as file:
+    write = csv.writer(file)
+    write.writerows(X_train)
+
 X_test = []
 for sentence in test['data']:
     temp_X = []
@@ -58,11 +62,11 @@ X_test = pad_sequences(X_test, maxlen = max_len)
 y_train = to_categorical(train['category'])
 
 # Save as CSV file
-with open('x_train.csv','w') as file:
+with open('x_train_pad.csv','w') as file:
     write = csv.writer(file)
     write.writerows(X_train)
 
-with open('x_test.csv','w') as file:
+with open('x_test_pad.csv','w') as file:
     write = csv.writer(file)
     write.writerows(X_test)
 

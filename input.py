@@ -25,7 +25,6 @@ with open('x_train.csv', newline='') as f:
     reader = csv.reader(f)
     X_train.append(list(reader))
 X_train = sum(X_train, [])
-#print(X_train)
 
 # Data Pre-Processing
 input = pd.read_csv('./input.csv', encoding = 'euc-kr')
